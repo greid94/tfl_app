@@ -5,17 +5,18 @@
 ---
 
 ## 🌐 Live Demo
+
 [Link coming soon](https://your-deployment-url.com)
 
 ---
 
 ## 🛠 Tech Stack
 
-| Frontend     | Backend     | Database        | External API |
-|--------------|-------------|-----------------|---------------|
-| React        | Express.js  | MongoDB Atlas   | RAWG API      |
-| Context API  | Node.js     | Mongoose        |               |
-| React Router | JWT Auth    |                 |               |
+| Frontend     | Backend    | Database      | External API |
+| ------------ | ---------- | ------------- | ------------ |
+| React        | Express.js | MongoDB Atlas | RAWG API     |
+| Context API  | Node.js    | Mongoose      |              |
+| React Router | JWT Auth   |               |              |
 
 ---
 
@@ -31,3 +32,5 @@
 ---
 
 ## 🗂️ Project Structure
+
+- test
