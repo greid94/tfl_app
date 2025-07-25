@@ -1,6 +1,6 @@
 # final-project-stage-1-front-end-and-api
 
-**MERN Game Hub** is a full-stack video game discovery platform built with the MERN stack (MongoDB, Express, React, Node.js). Users can browse popular games using the RAWG API, register/login securely, save favorite games, and post reviews.
+**The Final Level** is a full-stack video game discovery platform built with the MERN stack (MongoDB, Express, React, Node.js). Users can browse popular games using the RAWG API, register/login securely, save favorite games, and post reviews.
 
 ---
 
