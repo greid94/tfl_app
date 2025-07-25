@@ -1,4 +1,4 @@
-# final-project-stage-1-front-end-and-api
+# The final Level (Project 16)
 
 **The Final Level** is a full-stack video game discovery platform built with the MERN stack (MongoDB, Express, React, Node.js). Users can browse popular games using the RAWG API, register/login securely, save favorite games, and post reviews.
 
