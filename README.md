@@ -1,36 +1,12 @@
-# The final Level (Project 16)
+# React + Vite
 
-**The Final Level** is a full-stack video game discovery platform built with the MERN stack (MongoDB, Express, React, Node.js). Users can browse popular games using the RAWG API, register/login securely, save favorite games, and post reviews.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## 🌐 Live Demo
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-[Link coming soon](https://your-deployment-url.com)
+## Expanding the ESLint configuration
 
----
-
-## 🛠 Tech Stack
-
-| Frontend     | Backend    | Database      | External API |
-| ------------ | ---------- | ------------- | ------------ |
-| React        | Express.js | MongoDB Atlas | RAWG API     |
-| Context API  | Node.js    | Mongoose      |              |
-| React Router | JWT Auth   |               |              |
-
----
-
-## 🚀 Features
-
-- 🔍 **Game Browser**: Explore top-rated games with detailed info (screenshots, genres, ratings, etc.)
-- 👤 **User Authentication**: Sign up and login with secure JWT-based auth
-- ❤️ **Favorites**: Save your favorite games to your personal list
-- 💬 **Reviews**: Leave comments and reviews on games
-- 🔎 **Search**: Find games by title using RAWG's public API
-- 🎨 **Responsive UI**: Clean, user-friendly design with mobile support
-
----
-
-## 🗂️ Project Structure
-
-- test
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

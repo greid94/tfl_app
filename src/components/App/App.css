@@ -1,0 +1,30 @@
+@keyframes fadeController {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.page {
+  background: radial-gradient(circle at top, #3b3569 0%, #000000 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color: #fff;
+  padding: 39px 147px 0 90px;
+  min-height: 100vh;
+}
+
+.page__content {
+  background-image: url("../../assets/controller.svg");
+  background-repeat: no-repeat;
+  -webkit-background-size: 350px 400px;
+  -moz-background-size: 350px 400px;
+  background-position: top right;
+  background-size: 350px 400px;
+  max-width: 1440px;
+  margin: 0 auto;
+}

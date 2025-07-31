@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "Bitcount ExtraLight";
+  font-style: normal;
+  src: url("../src/vendor/fonts/Bitcount-ExtraLight.ttf");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Bitcount Regular";
+  font-style: normal;
+  src: url("../src/vendor/fonts/Bitcount-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Bitcount Cursive Bold";
+  src: url("../vendor/fonts/Bitcount_Cursive-Bold.ttf");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitcount Cursive SemiBold";
+  font-style: normal;
+  src: url("../vendor/fonts/Bitcount_Roman-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitcount light";
+  font-style: normal;
+  src: url("../vendor/fonts/Bitcount-light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+}
