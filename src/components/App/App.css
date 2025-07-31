@@ -19,12 +19,24 @@
 }
 
 .page__content {
-  background-image: url("../../assets/controller.svg");
+  /*background-image: url("../../assets/controller.svg");
   background-repeat: no-repeat;
   -webkit-background-size: 350px 400px;
   -moz-background-size: 350px 400px;
   background-position: top right;
-  background-size: 350px 400px;
+  background-size: 350px 400px;*/
   max-width: 1440px;
   margin: 0 auto;
+}
+
+.page__controller {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 400px;
+  opacity: 0.8;
+  max-width: 1440px;
+  animation: fadeController 10s ease-in-out infinite;
+  /* Ensure the controller is behind other content */
 }

@@ -5,6 +5,9 @@ import { useEffect, useState } from "react";
 export default function Main() {
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showAllGames, setShowAllGames] = useState(false);
+  const visibleGames = showAllGames ? games.slice(0, 6) : games.slice(0, 3);
+
   useEffect(() => {
     fetchPopularGames().then((data) => {
       setGames(data);
@@ -29,12 +32,16 @@ export default function Main() {
       <section className="games">
         <div className="games__header">
           <h2 className="games__text">What's Hot?!</h2>
-          <button type="button" className="games__btn">
-            See All
+          <button
+            type="button"
+            className="games__btn"
+            onClick={() => setShowAllGames(!showAllGames)}
+          >
+            {showAllGames ? "Show Less" : "Show More"}
           </button>
         </div>
         <ul className="games__list">
-          {games.map((game) => (
+          {visibleGames.map((game) => (
             <li key={game.id} className="games__item">
               <img
                 className="games__img"
