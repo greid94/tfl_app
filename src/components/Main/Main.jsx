@@ -1,6 +1,8 @@
 import "./Main.css";
 import { fetchPopularGames } from "../../utils/api";
 import { useEffect, useState } from "react";
+import Preloader from "../Preloader/Preloader";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 export default function Main() {
   const [games, setGames] = useState([]);
@@ -15,7 +17,7 @@ export default function Main() {
     });
   }, []);
   if (loading) {
-    return <div>Loading...</div>;
+    return <Preloader />; // Show preloader while fetching data
   }
   return (
     <>
