@@ -5,17 +5,22 @@ import Preloader from "../Preloader/Preloader";
 import GameCard from "../GameCard/GameCard";
 import GameModal from "../GameModal/GameModal";
 
-export default function Main() {
+export default function Main({ searchResults }) {
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showAllGames, setShowAllGames] = useState(false);
-  const visibleGames = showAllGames ? games.slice(0, 6) : games.slice(0, 3);
   const [likedGames, setLikedGames] = useState({});
   const [gameBriefs, setGameBriefs] = useState({});
   const [selectedGame, setSelectedGame] = useState(null);
 
+  useEffect(() => {
+    fetchPopularGames().then((data) => {
+      setGames(data);
+      setLoading(false);
+    });
+  }, []);
+
   const handleGameClick = (game) => {
-    console.log("Game clicked:", game);
     setSelectedGame(game);
   };
 
@@ -37,15 +42,15 @@ export default function Main() {
     }));
   };
 
-  useEffect(() => {
-    fetchPopularGames().then((data) => {
-      setGames(data);
-      setLoading(false);
-    });
-  }, []);
+  const sourceGames =
+    searchResults && searchResults.length > 0 ? searchResults : games;
+
+  const visibleGames = showAllGames
+    ? sourceGames.slice(0, 6)
+    : sourceGames.slice(0, 3);
 
   if (loading) {
-    return <Preloader />; // Show preloader while fetching data
+    return <Preloader />;
   }
 
   return (
@@ -60,9 +65,14 @@ export default function Main() {
           </p>
         </div>
       </section>
+
       <section className="games">
         <div className="games__header">
-          <h2 className="games__text">What's Hot?!</h2>
+          <h2 className="games__text">
+            {searchResults && searchResults.length > 0
+              ? "Search Results"
+              : "What's Hot?!"}
+          </h2>
           <button
             type="button"
             className="games__btn"
@@ -71,6 +81,7 @@ export default function Main() {
             {showAllGames ? "Show Less" : "Show More"}
           </button>
         </div>
+
         <ul className="games__list">
           {visibleGames.map((game) => (
             <GameCard
@@ -80,7 +91,6 @@ export default function Main() {
               brief={gameBriefs[game.id]}
               onLikeToggle={handleLikeToggle}
               onBriefChange={handleBriefChange}
-              //onClick={handleGameClick}
               onCardClick={handleGameClick}
             />
           ))}

@@ -6,8 +6,15 @@ export default function SearchModal({
   onClose,
   searchTerm,
   setSearchTerm,
+  onSearch,
 }) {
   if (!isOpen) return null;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSearch(searchTerm);
+    onClose();
+  };
 
   return (
     <div className="search-modal__overlay" onClick={onClose}>
@@ -18,13 +25,16 @@ export default function SearchModal({
         <button className="search-modal__close" onClick={onClose}>
           ✖
         </button>
-        <input
-          type="text"
-          placeholder="Search for a game..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="search-modal__input"
-        />
+        <form onSubmit={handleSubmit}>
+          <input
+            name="search"
+            type="text"
+            placeholder="Search for a game..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="search-modal__input"
+          />
+        </form>
       </div>
     </div>
   );
