@@ -1,18 +1,69 @@
-.game-card {
-  background-color: #1c1c1e;
-  border-radius: 8px;
-  padding: 10px;
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.gamecard {
+  background-color: #1e1e2f;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 16px;
   color: white;
-  text-align: center;
-  width: 150px;
-  transition: transform 0.2s;
+  list-style: none;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
-.game-card__img {
+.gamecard__img {
   width: 100%;
-  border-radius: 6px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-.game-card:hover {
-  transform: scale(1.05);
+.gamecard__info {
+  margin-top: 10px;
+}
+
+.gamecard__title {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.gamecard__like-btn {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.gamecard__like-btn.liked {
+  border-color: red;
+  color: red;
+}
+
+.gamecard__brief {
+  width: 100%;
+  padding: 8px;
+  background-color: #2c2c3e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  resize: none;
+  height: 60px;
+}
+
+.gamecard__like-btn.animate-pop {
+  animation: pop 0.3s ease;
 }

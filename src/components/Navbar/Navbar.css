@@ -32,7 +32,6 @@
 }
 
 .navbar__searchBtn {
-  background-image: url("../../assets/SearchButton.svg");
   background-size: cover;
   width: 40px;
   height: 40px;

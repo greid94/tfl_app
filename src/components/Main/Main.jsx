@@ -2,13 +2,40 @@ import "./Main.css";
 import { fetchPopularGames } from "../../utils/api";
 import { useEffect, useState } from "react";
 import Preloader from "../Preloader/Preloader";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import GameCard from "../GameCard/GameCard";
+import GameModal from "../GameModal/GameModal";
 
 export default function Main() {
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showAllGames, setShowAllGames] = useState(false);
   const visibleGames = showAllGames ? games.slice(0, 6) : games.slice(0, 3);
+  const [likedGames, setLikedGames] = useState({});
+  const [gameBriefs, setGameBriefs] = useState({});
+  const [selectedGame, setSelectedGame] = useState(null);
+
+  const handleGameClick = (game) => {
+    console.log("Game clicked:", game);
+    setSelectedGame(game);
+  };
+
+  const closeModal = () => {
+    setSelectedGame(null);
+  };
+
+  const handleLikeToggle = (gameId) => {
+    setLikedGames((prev) => ({
+      ...prev,
+      [gameId]: !prev[gameId],
+    }));
+  };
+
+  const handleBriefChange = (gameId, text) => {
+    setGameBriefs((prev) => ({
+      ...prev,
+      [gameId]: text,
+    }));
+  };
 
   useEffect(() => {
     fetchPopularGames().then((data) => {
@@ -16,9 +43,11 @@ export default function Main() {
       setLoading(false);
     });
   }, []);
+
   if (loading) {
     return <Preloader />; // Show preloader while fetching data
   }
+
   return (
     <>
       <section className="summary">
@@ -44,16 +73,20 @@ export default function Main() {
         </div>
         <ul className="games__list">
           {visibleGames.map((game) => (
-            <li key={game.id} className="games__item">
-              <img
-                className="games__img"
-                src={game.background_image}
-                alt={game.name}
-              />
-              <p className="games__title">{game.name}</p>
-            </li>
+            <GameCard
+              key={game.id}
+              game={game}
+              liked={likedGames[game.id]}
+              brief={gameBriefs[game.id]}
+              onLikeToggle={handleLikeToggle}
+              onBriefChange={handleBriefChange}
+              //onClick={handleGameClick}
+              onCardClick={handleGameClick}
+            />
           ))}
         </ul>
+
+        {selectedGame && <GameModal game={selectedGame} onClose={closeModal} />}
       </section>
     </>
   );
