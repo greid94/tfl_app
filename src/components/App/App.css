@@ -14,7 +14,7 @@
   background-size: cover;
   position: relative;
   color: #fff;
-  padding: 39px 147px 0 90px;
+  display: flex;
   min-height: 100vh;
   max-width: 1440px;
 }
@@ -26,8 +26,9 @@
   -moz-background-size: 350px 400px;
   background-position: top right;
   background-size: 350px 400px;*/
-
+  padding: 39px 147px 0 90px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .page__controller {

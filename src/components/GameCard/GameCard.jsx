@@ -28,7 +28,6 @@ export default function GameCard({
         src={game.background_image}
         alt={game.name}
         onClick={() => onCardClick(game)}
-        style={{ cursor: "pointer" }}
       />
 
       <div className="gamecard__info">
@@ -45,7 +44,7 @@ export default function GameCard({
 
         <textarea
           className="gamecard__brief"
-          placeholder="Leave a brief..."
+          placeholder="Whatcha thinkin?..."
           value={brief || ""}
           onChange={handleInputChange}
           maxLength={100}

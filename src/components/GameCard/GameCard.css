@@ -26,6 +26,7 @@
   height: 180px;
   object-fit: cover;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .gamecard__info {
@@ -35,17 +36,19 @@
 .gamecard__title {
   font-size: 18px;
   margin-bottom: 8px;
+  font-family: "Bitcount Regular";
 }
 
 .gamecard__like-btn {
   background-color: transparent;
-  border: 1px solid white;
+  border: none;
   color: white;
   padding: 6px 12px;
   border-radius: 4px;
   cursor: pointer;
   margin-bottom: 10px;
   transition: color 0.3s, border-color 0.3s;
+  font-family: "Bitcount light";
 }
 
 .gamecard__like-btn.liked {
@@ -54,8 +57,8 @@
 }
 
 .gamecard__brief {
-  width: 100%;
-  padding: 8px;
+  width: 300px;
+  padding: 8px 16px 8px 8px;
   background-color: #2c2c3e;
   color: white;
   border: none;

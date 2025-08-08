@@ -28,14 +28,16 @@ export default function Navbar({
         {currentUser ? (
           <div className="navbar__user">
             <button onClick={toggleDropdown} className="navbar__userBtn">
-              {currentUser.email.split("@")[0]} ⌄
+              {currentUser.email.split("@")[0]}
             </button>
             {isDropdownOpen && (
               <div className="navbar__dropdown">
-                <Link to="/profile" className="navbar__dropdown-link">
+                <Link to="/profile" className="navbar__dropdown-profile">
                   My Profile
                 </Link>
-                <button onClick={onLogout}>Log Out</button>
+                <button className="navbar__dropdown-btn" onClick={onLogout}>
+                  Log Out
+                </button>
               </div>
             )}
           </div>
